@@ -2,11 +2,12 @@ import { TodoistApi } from '@doist/todoist-api-typescript';
 import * as dotenv from 'dotenv';
 import { execSync } from 'child_process';
 
+dotenv.config();
+
 class TodoistToRemindersSync {
     private todoist: TodoistApi;
 
     constructor(apiToken: string) {
-        dotenv.config();
         this.todoist = new TodoistApi(apiToken);
     }
 
